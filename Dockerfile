@@ -18,6 +18,7 @@ RUN python -m venv venv
 RUN . venv/bin/activate
 
 # Install any necessary dependencies specified in requirements.txt
+RUN venv/bin/pip install --upgrade pip setuptools wheel
 RUN venv/bin/pip install -r requirements.txt
 
 # Make port 8080 available to the world outside this container
