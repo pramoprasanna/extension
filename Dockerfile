@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.12-alpine
+FROM python:3.12
 
 # Set the working directory in the container
 WORKDIR /app
@@ -7,15 +7,8 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-# Upgrade pip to the latest version
-RUN pip install --upgrade pip
-
-# Install virtualenv
-RUN pip install virtualenv
-
-# Create and activate a virtual environment
+# Create a virtual environment
 RUN python -m venv venv
-RUN . venv/bin/activate
 
 # Install any necessary dependencies specified in requirements.txt
 RUN venv/bin/pip install --upgrade pip setuptools wheel
@@ -27,5 +20,5 @@ EXPOSE 8080
 # Define environment variable
 ENV NAME World
 
-# Run app.py when the container launches
-CMD ["venv/bin/python", "app.py"]
+# Run the application
+CMD ["venv/bin/python", "server.py"]
