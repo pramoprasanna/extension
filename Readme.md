@@ -9,3 +9,5 @@ backend
 
 
 uri : 396913724169.dkr.ecr.eu-north-1.amazonaws.com/extension-rep
+
+REPO NAME : thinkinfo/extension
