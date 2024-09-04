@@ -17,3 +17,11 @@ class User(Document):
     verification = BooleanField(default=False)
     otp = StringField()
     otp_expiry = DateTimeField()
+
+    # New fields for subscription information
+    subscription_status = StringField(default="inactive")  # active, inactive, cancelled
+    subscription_id = StringField()
+    subscription_start = DateTimeField()
+    subscription_end = DateTimeField()
+
+    
