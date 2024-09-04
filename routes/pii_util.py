@@ -35,9 +35,26 @@ class CreditCardRecognizer(PatternRecognizer):
         else:
             return "UNKNOWN"
 
-# Add custom recognizer to the analyzer
+
+# recognizer for Aadhaar number detection
+class AadhaarRecognizer(PatternRecognizer):
+    def __init__(self):
+        # Aadhaar number is a 12-digit number, possibly with spaces in between
+        patterns = [
+            Pattern("Aadhaar number (strong)", r"\b\d{4}\s?\d{4}\s?\d{4}\b", 0.85)
+        ]
+        super().__init__(supported_entity="AADHAAR", patterns=patterns)
+
+# Add custom recognizers to the analyzer
 credit_card_recognizer = CreditCardRecognizer()
+aadhaar_recognizer = AadhaarRecognizer()
 analyzer.registry.add_recognizer(credit_card_recognizer)
+analyzer.registry.add_recognizer(aadhaar_recognizer)
+
+
+# # Add custom recognizer to the analyzer
+# credit_card_recognizer = CreditCardRecognizer()
+# analyzer.registry.add_recognizer(credit_card_recognizer)
 
 def analyze_pii(text):
     # Analyze the text to detect sensitive information
