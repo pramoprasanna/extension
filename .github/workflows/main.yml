@@ -82,9 +82,7 @@ jobs:
          
       - name: Pull latest images
         run: |
-          sudo docker login --username ${{ secrets.AWS_ACCESS_KEY_ID }} $ password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          sudo docker pull ${{ secrets.AWS_ACCESS_KEY_ID }}/${{secrets.ECR_REPOSITORY_NAME }}:latest
-        # docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{secrets.ECR_REPOSITORY_NAME }}:latest
+         docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{secrets.ECR_REPOSITORY_NAME }}:latest
          
       # - name: Stop and remove container if running
       #   run: |
