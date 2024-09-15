@@ -21,6 +21,6 @@ AWS_ACCESS_KEY_ID : IAM USer AKIAVY2PGZMERX3X74HK  > AWS_SECRET_ACCESS_KEY: 8rFR
 
 AWS_REGION : ap-southeast-2
 
-AWS_ECR_LOGIN_URI : 396913724169.dkr.ecr.ap-southeast-2.amazonaws.com/thinkinfo/extension
+AWS_ECR_LOGIN_URI : 396913724169.dkr.ecr.ap-southeast-2.amazonaws.com
 
-ECR_REPOSITORY_NAME : extension-rep
+ECR_REPOSITORY_NAME : thinkinfo/extension
