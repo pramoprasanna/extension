@@ -24,3 +24,32 @@ AWS_REGION : ap-southeast-2
 AWS_ECR_LOGIN_URI : 396913724169.dkr.ecr.ap-southeast-2.amazonaws.com
 
 ECR_REPOSITORY_NAME : thinkinfo/extension
+
+New EC2 Instance Setup :
+
+Docker Setup in EC2:
+
+sudo apt-get update -y
+sudo apt-get upgrade
+
+#required
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker ubuntu
+newgrp docker
+
+Runner Setup in the EC2 Instance to Listen to GIT Updates:
+
+ONE TIME :
+
+$ mkdir actions-runner && cd actions-runner# Download the latest runner package
+$ curl -o actions-runner-linux-x64-2.319.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.319.1/actions-runner-linux-x64-2.319.1.tar.gz# Optional: Validate the hash
+$ echo "3f6efb7488a183e291fc2c62876e14c9ee732864173734facc85a1bfb1744464  actions-runner-linux-x64-2.319.1.tar.gz" | shasum -a 256 -c# Extract the installer
+$ tar xzf ./actions-runner-linux-x64-2.319.1.tar.gz
+
+./config.sh --url https://github.com/pramoprasanna/extension --token AN572J327P53EXZKWTTXEPDG44UJU
+./run.sh
+
+
+
