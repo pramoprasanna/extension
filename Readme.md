@@ -17,7 +17,7 @@ Create Runner on Github portal - and run the commans mentioend in the Github on 
 
 Add all Secret Environement variables declared in main.yaml file 
 
-AWS_ACCESS_KEY_ID : AKIAVY2PGZMEZGZHPSWQ > AWS_SECRET_ACCESS_KEY: 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 ( IAM User  )
+AWS_ACCESS_KEY_ID : IAM USer AKIAVY2PGZMERX3X74HK  > AWS_SECRET_ACCESS_KEY: 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 ( IAM User  )
 
 AWS_REGION : ap-southeast-2
 
