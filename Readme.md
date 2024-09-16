@@ -55,5 +55,13 @@ To activate GitHub Runner on existing server :
 
 ./run.sh
 
+Resolved Space issue failure "failed to register layer: write /app/venv/lib/python3.12/site-packages/opencv_python.libs/libopenblas-r0-f650aae0.3.3.so: no space left on device" with below steps :
 
+Extend the EBS volume: If cleaning up space doesn't help and you anticipate needing more space, you can extend the EBS volume attached to your instance:
 
+In the AWS Management Console, go to the EC2 Dashboard > Volumes.
+Find the volume attached to your instance and select Modify Volume to increase the size.
+After increasing the size, you'll need to extend the partition on the instance:
+
+sudo growpart /dev/xvda 1
+sudo resize2fs /dev/xvda1
