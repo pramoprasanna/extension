@@ -43,11 +43,13 @@ Runner Setup in the EC2 Instance to Listen to GIT Updates:
 
 ONE TIME :
 
-$ mkdir actions-runner && cd actions-runner# Download the latest runner package
-$ curl -o actions-runner-linux-x64-2.319.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.319.1/actions-runner-linux-x64-2.319.1.tar.gz# Optional: Validate the hash
-$ echo "3f6efb7488a183e291fc2c62876e14c9ee732864173734facc85a1bfb1744464  actions-runner-linux-x64-2.319.1.tar.gz" | shasum -a 256 -c# Extract the installer
-$ tar xzf ./actions-runner-linux-x64-2.319.1.tar.gz
-./config.sh --url https://github.com/pramoprasanna/extension --token << Gets Updated , Check the Actions > Runner Tab in the GIT REPO >>
+# Download the latest runner package
+
+STEP 1 : $ mkdir actions-runner && cd actions-runner
+STEP 2: $ curl -o actions-runner-linux-x64-2.319.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.319.1/actions-runner-linux-x64-2.319.1.tar.gz# Optional: Validate the hash
+STEP 3: $ echo "3f6efb7488a183e291fc2c62876e14c9ee732864173734facc85a1bfb1744464  actions-runner-linux-x64-2.319.1.tar.gz" | shasum -a 256 -c# Extract the installer
+STEP 4: $ tar xzf ./actions-runner-linux-x64-2.319.1.tar.gz
+STEP 5: ./config.sh --url https://github.com/pramoprasanna/extension --token << Gets Updated , Check the Actions > Runner Tab in the GIT REPO >>
 
 To activate GitHub Runner on existing server :
 
