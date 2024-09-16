@@ -65,3 +65,9 @@ After increasing the size, you'll need to extend the partition on the instance:
 
 sudo growpart /dev/xvda 1
 sudo resize2fs /dev/xvda1
+
+Run below commands if not container should be renamed after completion of evey pipeline :
+
+docker rmi -f $(docker image ls -a -q) > Check space usage
+doker system prune
+docker rmi -f $(docker image ls -a -q)
